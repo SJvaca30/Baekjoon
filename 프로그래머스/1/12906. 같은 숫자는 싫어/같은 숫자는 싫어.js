@@ -1,13 +1,10 @@
-function solution(arr) {
-  let prev = arr[0];
-  let result = [prev];
+function solution(arr)
+{
+    var answer = [arr[0]];
 
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] !== prev) {
-      result.push(arr[i]);
-      prev = arr[i];
+    for(let i = 1; i < arr.length ; i++) {
+        if(arr[i-1] !== arr[i]) answer.push(arr[i]);
     }
-  }
 
-  return result;
+    return answer;
 }
