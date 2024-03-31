@@ -1,13 +1,3 @@
 function solution(picture, k) {
-    let result = [];
-    for (let i = 0; i < picture.length; i++) {
-        let row = '';
-        for (let j = 0; j < picture[i].length; j++) {
-            row += picture[i][j].repeat(k);
-        }
-        for (let j = 0; j < k; j++) {
-            result.push(row);
-        }
-    }
-    return result;
+    return picture.flatMap(line => Array(k).fill(line.split('').map(char => char.repeat(k)).join('')));
 }
