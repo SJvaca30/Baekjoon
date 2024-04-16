@@ -1,9 +1,7 @@
-function solution(N, A, B) {
-    let round = 0;
-    while (A !== B) {
-        A = Math.ceil(A / 2);
-        B = Math.ceil(B / 2);
-        round++;
+function solution(N, A, B, round = 1) {
+    if (Math.ceil(A / 2) === Math.ceil(B / 2)) {
+        return round;
+    } else {
+        return solution(N, Math.ceil(A / 2), Math.ceil(B / 2), round + 1);
     }
-    return round;
 }
